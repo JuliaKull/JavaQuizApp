@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>QuizJavaNew</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Quiz</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/questions}">List of questions</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="main-container container py-5 px-4">
+    <div class="text-box">
+        <h1 class="mb-5 text-center">Java Quiz</h1>
+        <form class="card bg-secondary py-5 px-4 text-light" action="/quiz" method="POST">
+            <p>Enter Your Name</p>
+            <input type="text" name="username" />
+            <p class="text-danger warning text-dark" th:if="${warning}" th:text="${warning}"></p>
+            <button type="submit" class="btn btn-warning">Start Quiz</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: "003-create-table-answers-and-insert-data.sql"
+      relativeToChangelogFile: true
+

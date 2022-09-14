@@ -1,0 +1,49 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>QuizJavaNew</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
+
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Quiz</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Importing NavBar -->
+
+</nav>
+    <div class="container py-5 px-4">
+        <h1 class="alert alert-primary" th style="text-align:center">Select The Correct Answers</h1>
+    </div>
+<form action="submit" method="POST" th:object=${qForm}>
+    <div class="ques-box bg-info text-light" th:each="ques, i: ${qForm.questions}">
+        <p class="title" th:text="${ques.title}"></p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio"  th:value="1" />
+            <p th:text="${ques.answerA}"></p>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio"  th:value="2" />
+            <p th:text="${ques.answerB}"></p>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input"  type="radio" th:value="3" />
+            <p th:text="${ques.answerC}"></p>
+        </div>
+    </div>
+</form>
+
+
+</body>
+</html>
